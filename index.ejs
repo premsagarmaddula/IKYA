@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Participation Platform</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <div class="search-container">
+        <form action="/search" method="GET">
+            <input type="text" name="search" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <header>
+        <h1>Welcome to the IKYA - A College Participation Platform</h1>
+        <p><strong>Connecting BTech Students Across All Departments</strong></p>
+    </header>
+
+    <div class="event-container">
+        <h2>Upcoming Events</h2>
+        <div id="event-list">
+            <% events.forEach(event => { %>
+            <div class="event">
+                <strong><%= event.name %></strong><br>
+                Date: <%= event.date %>
+            </div>
+            <% }); %>
+        </div>
+
+        <h3>Add a New Event</h3>
+        <form action="/add_event" method="POST">
+            <input type="text" name="event_name" placeholder="Event Name" required><br><br>
+            <input type="date" name="event_date" required><br><br>
+            <button type="submit">Add Event</button>
+        </form>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/gallery">Department Galleries</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/Event">Events</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h4>Our Purpose</h4>
+            <p>This platform is designed to engage students from the 1st year to final year of BTech, encouraging collaboration between departments through events and activities.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SRKREC IKYA</p>
+    </footer>
+</body>
+</html>
