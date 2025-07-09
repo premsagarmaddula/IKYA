@@ -18,8 +18,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // Note: JavaScript running in the browser cannot connect directly to MongoDB for security reasons.
-    // You must connect to MongoDB from your Flask backend (Python), not from this client-side JavaScript.
-    // If you want to fetch MongoDB data, use Flask to provide an API endpoint and fetch it here via AJAX/fetch.
 });
